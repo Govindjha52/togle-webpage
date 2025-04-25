@@ -1,0 +1,48 @@
+@media only screen and (max-width:600px) {
+    .container-fluid {
+        padding: 0px 10px;
+    }
+    .collapse>.combine {
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: 60px;
+        background: #37845d !important;
+    }
+    .element {
+        padding: 10px 25px;
+        gap: 15px;
+        align-items: start;
+    }
+    .element a {
+        font-size: 20px;
+    }
+    ul.sub-element,
+    ul .sub-element2 {
+        padding: 50px 0px 0px;
+        position: absolute;
+        left: 0%;
+        width: 100%;
+        height: 100vh;
+        background: #37845d;
+        gap: 15px;
+    }
+    ul .sub-element2 {
+        width: 100%;
+    }
+    .back-link a {
+        font-size: 20px;
+        font-weight: bold;
+        display: block;
+        margin-bottom: 20px;
+        position: absolute;
+        top: 25px;
+        left: 20px;
+    }
+    .sub-element2>.back-link a {
+        left: 10px;
+    }
+    .sub-element2 li {
+        margin-right: 80px;
+    }
+}

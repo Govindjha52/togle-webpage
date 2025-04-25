@@ -1,0 +1,738 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+/* font-family: "Plus Jakarta Sans", sans-serif; */
+
+@font-face {
+    font-family: 'Font Awesome 5 Brands';
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url("../webfonts/fa-brands-400.eot");
+    src: url("../webfonts/fa-brands-400.eot?#iefix") format("embedded-opentype"), url("../webfonts/fa-brands-400.woff2") format("woff2"), url("../webfonts/fa-brands-400.woff") format("woff"), url("../webfonts/fa-brands-400.ttf") format("truetype"), url("../webfonts/fa-brands-400.svg#fontawesome") format("svg");
+}
+
+.fal,
+.far {
+    font-family: "Font Awesome 5 Pro";
+}
+
+.fab {
+    font-family: 'Font Awesome 5 Brands';
+    font-weight: 400;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Scrollbar Styling */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ebebeb;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #6d6d6d;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+a,
+a:link,
+a:visited,
+a:active,
+a:hover,
+button,
+input,
+select,
+textarea,
+i {
+    text-decoration: none;
+    outline: none;
+    -moz-transition: all 300ms ease-in-out;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    outline: none;
+    -moz-transition: all 300ms ease-in-out;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    width: auto;
+    height: auto;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+p {
+    font-size: 16px;
+    line-height: 26px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --black: #000;
+    --white: #FFFFFF;
+    --grey: #EAE7F2;
+    --green: #34855B;
+    --darkblue: #1C3141;
+    --font16: 16px;
+    --font20: 20px;
+    --font32: 32px;
+    --font60: 60px;
+}
+
+.comnpadding {
+    padding: 100px 0;
+}
+
+.main_heading {
+    font-size: var(--font60);
+    margin-bottom: 25px;
+    color: var(--black);
+    line-height: 120%;
+}
+
+.main_heading small {
+    font-size: var(--font16);
+}
+
+.tagline {
+    font-size: var(--font32);
+    color: var(--green);
+    font-weight: 600;
+}
+
+.comnbtn {
+    font-size: var(--font20);
+    text-transform: capitalize;
+    font-weight: 500;
+    background: var(--green);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 30px;
+    display: inline-block;
+    margin-top: 20px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.comnbtn::before {
+    content: "";
+    background: var(--darkblue);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    border-radius: 30px;
+    transform: scale(0);
+    -moz-transition: all 300ms ease-in-out;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+.comnbtn:hover::before {
+    transform: scale(1);
+}
+
+.comnbtn i {
+    margin-left: 10px;
+}
+
+.banner .comnbtn i {
+    transform: rotate(-45deg);
+}
+
+.accordion-body .comnbtn {
+    background: var(--white);
+    color: var(--green);
+}
+
+.accordion-body .comnbtn:hover {
+    color: var(--white);
+}
+
+
+/*================================= header css start here =================================*/
+
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 1;
+}
+
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.top_right {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.serchbtn {
+    border: none;
+    background: var(--green);
+    color: var(--white);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 25px;
+    font-size: 18px;
+}
+
+.serchbox {
+    /* background: rgba(52, 133, 91, 0.85); */
+    background: rgba(0, 0, 0, 0.85);
+    width: 100%;
+    height: 0;
+    position: fixed;
+    z-index: 5;
+    top: -100%;
+    left: 0;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -moz-transition: all 300ms ease-in-out;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+.serchbox.show {
+    top: 0;
+    height: 100vh;
+}
+
+.in_search {
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+}
+
+.in_search input {
+    font-size: 18px;
+    height: 60px;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 70px 5px 15px;
+    -moz-transition: all 1000ms ease-in-out;
+    -webkit-transition: all 1000ms ease-in-out;
+    transition: all 1000ms ease-in-out;
+}
+
+.in_search button {
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px;
+    position: absolute;
+    right: 4px;
+    top: 0;
+    background: var(--green);
+    color: var(--white);
+    margin: auto;
+    height: 90%;
+    bottom: 0;
+}
+
+.in_search i {
+    position: absolute;
+    font-size: 40px;
+    color: var(--white);
+    /* color: var(--green); */
+    font-weight: 100;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.show .in_search i {
+    right: -50px;
+    opacity: 1;
+    animation: mymove 2s;
+}
+
+@keyframes mymove {
+    from {
+        transform: scale(0.1);
+        transform: rotate(0deg);
+    }
+    to {
+        transform: scale(01);
+        transform: rotate(90deg);
+    }
+}
+
+.header .menu_bar {
+    border: none;
+    background: none;
+    padding: 0;
+}
+
+.header .menu_bar i {
+    color: var(--green);
+    font-size: var(--font_20);
+}
+
+.hamburger .line {
+    width: 50px;
+    height: 5px;
+    background-color: var(--green);
+    display: block;
+    margin: 8px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger:hover {
+    cursor: pointer;
+}
+
+
+/*=========================================================================== header menu css start here ===========================================================================*/
+
+.bg-dark {
+    padding: 15px 0px;
+}
+
+.container-fluid {
+    padding: 0px 25px 0px 100px;
+}
+
+.navbar-toggler:focus {
+    text-decoration: none;
+    box-shadow: none;
+}
+
+.collapse>.combine {
+    left: auto;
+    z-index: 1;
+    width: 33.33%;
+    height: calc(100vh - 75px);
+    position: absolute;
+    right: 0;
+    top: 75px;
+    background-color: #34855b;
+    transition: right 0.3s ease;
+}
+
+.element {
+    padding-top: 50px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+    position: relative;
+    right: 0;
+    transition: right 0.3s ease;
+}
+
+.element a {
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    font-weight: 500;
+}
+
+.sub-element a {
+    font-size: 20px;
+}
+
+.sub-element,
+.sub-element2 {
+    display: none;
+    list-style: none;
+}
+
+ul.sub-element,
+ul .sub-element2 {
+    height: 92vh;
+    width: 100%;
+    display: block;
+    position: absolute;
+    background: rgb(52 62 63);
+    top: 0px;
+    left: 100%;
+    text-align: center;
+    z-index: 10;
+    padding: 75px;
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+}
+
+ul .sub-element2 {
+    background: rgb(112 112 112);
+}
+
+
+/*=========================================================================== header menu css end here ===========================================================================*/
+
+
+/* ONE */
+
+#hamburger-1.is-active .line:nth-child(2) {
+    opacity: 0;
+}
+
+#hamburger-1.is-active .line:nth-child(1) {
+    -webkit-transform: translateY(13px) rotate(45deg);
+    -ms-transform: translateY(13px) rotate(45deg);
+    -o-transform: translateY(13px) rotate(45deg);
+    transform: translateY(13px) rotate(45deg);
+}
+
+#hamburger-1.is-active .line:nth-child(3) {
+    -webkit-transform: translateY(-13px) rotate(-45deg);
+    -ms-transform: translateY(-13px) rotate(-45deg);
+    -o-transform: translateY(-13px) rotate(-45deg);
+    transform: translateY(-13px) rotate(-45deg);
+}
+
+
+/* SIX */
+
+#hamburger-6.is-active {
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition-delay: 0.6s;
+    -o-transition-delay: 0.6s;
+    transition-delay: 0.6s;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+#hamburger-6.is-active .line:nth-child(2) {
+    width: 0px;
+}
+
+#hamburger-6.is-active .line:nth-child(1),
+#hamburger-6.is-active .line:nth-child(3) {
+    -webkit-transition-delay: 0.3s;
+    -o-transition-delay: 0.3s;
+    transition-delay: 0.3s;
+}
+
+#hamburger-6.is-active .line:nth-child(1) {
+    -webkit-transform: translateY(13px);
+    -ms-transform: translateY(13px);
+    -o-transform: translateY(13px);
+    transform: translateY(13px);
+}
+
+#hamburger-6.is-active .line:nth-child(3) {
+    -webkit-transform: translateY(-13px) rotate(90deg);
+    -ms-transform: translateY(-13px) rotate(90deg);
+    -o-transform: translateY(-13px) rotate(90deg);
+    transform: translateY(-13px) rotate(90deg);
+}
+
+.hamburger_menu ul {
+    position: fixed;
+    right: 0;
+    background: var(--green);
+    width: 300px;
+    padding: 15px;
+}
+
+.hamburger_menu ul li a {
+    color: var(--white);
+    border-bottom: 1px solid;
+}
+
+ul.list_menu2 {
+    position: absolute;
+    left: 30%;
+}
+
+ul.list_menu3 {
+    position: absolute;
+    left: 60%;
+}
+
+.menu {
+    background: var(--green);
+    height: calc(100vh - 80px);
+    /* min-width: 300px; */
+    position: fixed;
+    right: -100%;
+    top: 80px;
+    -moz-transition: all 300ms ease-in-out;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+    width: 100%;
+    /* transform: translateX(-100%); */
+    display: flex;
+    gap: 30px;
+}
+
+.menu.show {
+    right: -70%;
+}
+
+.menu.show.second {
+    right: -37%;
+}
+
+.menu.show.second.third {
+    right: 0;
+}
+
+.menu ul {
+    width: 33.33%;
+}
+
+.menu a {
+    color: var(--white);
+    border-bottom: 1px solid;
+    padding: 15px;
+    display: block;
+}
+
+.list2,
+.list3 {
+    /* display: none; */
+    position: absolute;
+    top: 0;
+    /* left: 30%;
+    width: 30%;
+    background: #34855b; */
+    -moz-transition: all 300ms ease-in-out;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+ul.list2 {
+    background: #28bc6b;
+    left: 33%;
+}
+
+ul.list3 {
+    background: #00e266;
+    left: 100%;
+    width: 100%;
+}
+
+
+/*======================================= Banner Css Start Here =======================================*/
+
+.banner {
+    padding: 100px 0;
+}
+
+.banner_img {
+    text-align: center;
+}
+
+
+/*  */
+
+.acc_part {
+    padding: 70px 0 150px;
+}
+
+.accordion-button::after {
+    display: none;
+}
+
+.accordion-item {
+    /* color: var(--white);
+    background: var(--green); */
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.accordion-button {
+    font-size: var(--font60);
+    color: var(--black);
+    background: var(--grey);
+    font-weight: 400;
+    padding: 30px 70px;
+}
+
+.accordion-button:not(.collapsed) {
+    color: var(--white);
+    background: var(--green);
+    box-shadow: none;
+    border: none;
+}
+
+.accordion-item:first-of-type,
+.accordion-item:last-of-type>.accordion-header .accordion-button.collapsed,
+.accordion-item:last-of-type>.accordion-collapse,
+.accordion-item:last-of-type {
+    border-radius: 30px;
+    border: none;
+}
+
+.accordion-body {
+    background: var(--green);
+    color: var(--white);
+    padding: 30px 70px;
+}
+
+.accordion-body ul {
+    list-style: none;
+}
+
+.accordion-body li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.accordion-body li:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.accordion-body li .imgdiv,
+.accordion-body li .textdiv {
+    width: calc(50% - 15px);
+}
+
+
+/*======================================= Footer Css Start Here =======================================*/
+
+footer {
+    background: #D1BE9E;
+    background-position: top;
+    background-size: cover;
+    position: relative;
+    padding: 70px 0 40px;
+}
+
+.ft_link a {
+    font-size: var(--font32);
+    color: var(--darkblue);
+    display: table;
+    font-weight: 400;
+    position: relative;
+}
+
+.fr_link h6 {
+    font-size: var(--font16);
+    color: var(--darkblue);
+    font-weight: 300;
+}
+
+.fr_link a {
+    font-size: var(--font18);
+    color: var(--darkblue);
+    display: table;
+    font-weight: 400;
+    position: relative;
+}
+
+.copyright {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 100px;
+    font-size: var(--font16);
+    color: var(--darkblue);
+}
+
+.copyright a::after,
+.ft_link a:after,
+.fr_link a::after {
+    content: "";
+    width: 0;
+    height: 1px;
+    background: var(--green);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    -moz-transition: all 300ms ease-in-out;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+.copyright a {
+    color: var(--darkblue);
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.copyright a:hover::after,
+.ft_link a:hover::after,
+.fr_link a:hover::after {
+    width: 100%;
+}
+
+.copyright a:hover {
+    color: var(--green);
+}
+
+.ftlink a {
+    margin-right: 50px;
+}
+
+.ftlink a:last-child {
+    margin-right: 0px;
+}
+
+.chat_icon {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 5;
+}
